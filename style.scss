@@ -1,0 +1,45 @@
+$colour1: #3b2f2f;
+$colour2: #f8f8f8;
+$colour3: #128482;
+
+* {
+  box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.header,
+.footer {
+  background-color: $colour3;
+  margin: 0 auto;
+  width: 80%;
+  * {
+    color: $colour2;
+  }
+}
+
+.header {
+  height: 15vh;
+  text-align: center;
+}
+
+.main {
+  height: 80vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.footer {
+  height: 5vh;
+  padding: 7px;
+  text-align: right;
+  .footer-link {
+    .footer-link-icon {
+      font-size: 21px;
+    }
+  }
+}
