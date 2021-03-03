@@ -107,6 +107,54 @@ body {
   }
 }
 
+.work {
+  .work-box {
+    display: flex;
+    flex-wrap: wrap;
+    .work-box-item {
+      background-color: rgba($color: $colour1, $alpha: 0.42);
+      margin: 7px auto;
+      padding: 12px 10px;
+      position: relative;
+      width: 230px;
+      .work-box-item-img {
+        border: 2px solid $colour4;
+        width: 210px;
+      }
+      .work-box-item-title {
+        border-bottom: 4px solid $colour3;
+        color: $colour2;
+        text-align: center;
+      }
+      .work-box-item-text {
+        color: $colour2;
+        padding: 6px 0;
+        text-align: justify;
+      }
+      .work-box-item-links {
+        bottom: 12px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: absolute;
+        width: 92%;
+        .work-box-item-link {
+          color: $colour2;
+          text-decoration: none;
+          text-align: center;
+        }
+        .work-box-item-link:nth-child(1) {
+          background-color: $colour3;
+          border: 2px solid $colour4;
+        }
+        .work-box-item-link:nth-child(2) {
+          background-color: $colour4;
+          border: 2px solid $colour3;
+        }
+      }
+    }
+  }
+}
+
 .about {
   .about-grid {
     display: grid;
