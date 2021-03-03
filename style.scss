@@ -4,9 +4,11 @@ $colour3: #128482;
 $colour4: #d0491e;
 
 $xmargin: 6%;
+$ymargin: 110px;
 
 * {
   box-sizing: border-box;
+  color: $colour1;
   font-family: "Mulish", sans-serif;
   list-style: none;
   margin: 0;
@@ -29,17 +31,28 @@ body {
 }
 
 .header {
+  animation: slideInDown;
+  animation-duration: 1.4s;
+  height: $ymargin;
+  position: absolute;
+  top: 0;
+  width: 100%;
   .header-content {
     margin: 0 $xmargin;
     text-align: center;
+    .name {
+      font-size: 42px;
+    }
+    .subtitle {
+      font-size: 18px;
+    }
     .header-nav {
-      padding: 7px 0;
       .nav-links {
         display: flex;
         justify-content: space-around;
         .nav-link {
           cursor: pointer;
-          font-size: 21px;
+          font-size: 28px;
 
           transition: 0.3s color ease-in-out;
         }
@@ -52,15 +65,94 @@ body {
 }
 
 .main {
-  padding: 21px $xmargin;
+  background-image: url("./background.png");
+  background-position: center;
+  background-size: cover;
+  min-height: 97vh;
+  padding: $ymargin $xmargin 0 $xmargin;
+  .main-content {
+    animation: fadeInUp;
+    animation-duration: 1.4s;
+    padding-top: 21px;
+    .main-content-title {
+      color: $colour3;
+      font-size: 42px;
+      text-align: center;
+    }
+  }
+}
+
+.skills {
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 42px;
+    .skills-grid-item {
+      margin-bottom: 42px;
+      text-align: center;
+      i {
+        color: $colour4;
+        font-size: 120px;
+      }
+      .skills-caption {
+        font-size: 28px;
+        font-weight: bold;
+        text-shadow: 2px 2px $colour2;
+      }
+    }
+  }
+}
+
+.about {
+  .about-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    .about-grid-item {
+      img {
+        margin-top: 120px;
+      }
+      .about-intro {
+        color: $colour4;
+        font-size: 35px;
+        padding: 0 21px;
+      }
+      .about-text {
+        background-color: rgba($color: $colour1, $alpha: 0.42);
+        color: $colour2;
+        font-size: 21px;
+        margin: 21px;
+        padding: 21px 42px;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+.contact {
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 80px 100%;
+    margin-top: 42px;
+    .contact-left {
+      a {
+        i {
+          color: $colour4;
+          font-size: 70px;
+          padding-bottom: 21px;
+        }
+      }
+    }
+    .contact-right {
+      font-size: 42px;
+    }
+  }
 }
 
 .footer {
-  bottom: 0;
+  animation: slideInUp;
+  animation-duration: 1.4s;
   padding: 7px $xmargin;
-  position: absolute;
   text-align: right;
-  width: 100%;
   .footer-link {
     .footer-link-icon {
       font-size: 21px;
