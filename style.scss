@@ -4,7 +4,9 @@ $colour3: #128482;
 $colour4: #d0491e;
 
 $xmargin: 6%;
+$xmargin-narrow: 2%;
 $ymargin: 110px;
+$ymargin-narrow: 60px;
 
 * {
   box-sizing: border-box;
@@ -20,6 +22,7 @@ $ymargin: 110px;
 
 body {
   min-height: 100vh;
+  min-width: 100%;
 }
 
 .header,
@@ -65,10 +68,11 @@ body {
 }
 
 .main {
+  background-attachment: fixed;
   background-image: url("./background.png");
   background-position: center;
   background-size: cover;
-  min-height: 97vh;
+  min-height: 100vh;
   padding: $ymargin $xmargin 0 $xmargin;
   .main-content {
     animation: fadeInUp;
@@ -109,7 +113,7 @@ body {
     grid-template-columns: auto auto;
     .about-grid-item {
       img {
-        margin-top: 120px;
+        width: 210px;
       }
       .about-intro {
         color: $colour4;
@@ -131,7 +135,7 @@ body {
 .contact {
   .contact-grid {
     display: grid;
-    grid-template-columns: 80px 100%;
+    grid-template-columns: 80px 200px;
     margin-top: 42px;
     .contact-left {
       a {
@@ -153,9 +157,84 @@ body {
   animation-duration: 1.4s;
   padding: 7px $xmargin;
   text-align: right;
-  .footer-link {
-    .footer-link-icon {
-      font-size: 21px;
+}
+
+@media only screen and (max-width: 767px) {
+  .header {
+    height: $ymargin-narrow;
+    .header-content {
+      margin: 0 $xmargin-narrow;
+      .name {
+        font-size: 21px;
+      }
+      .subtitle {
+        font-size: 12px;
+      }
+      .header-nav {
+        .nav-links {
+          display: flex;
+          justify-content: space-between;
+          .nav-link {
+            font-size: 12px;
+            margin-left: -35px;
+          }
+        }
+      }
     }
+  }
+
+  .main {
+    padding: $ymargin-narrow $xmargin-narrow 0 $xmargin-narrow;
+    .main-content {
+      padding-top: 12px;
+      .main-content-title {
+        font-size: 21px;
+      }
+    }
+  }
+
+  .skills {
+    .skills-grid {
+      margin-top: 14px;
+      .skills-grid-item {
+        margin-bottom: 14px;
+        i {
+          font-size: 60px;
+        }
+        .skills-caption {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .about {
+    .about-grid {
+      grid-template-columns: 1fr;
+      .about-grid-item {
+        .about-intro {
+          font-size: 21px;
+          padding: 0;
+        }
+        .about-text {
+          font-size: 12px;
+          margin: 7px;
+          padding: 7px 21px;
+        }
+      }
+    }
+  }
+
+  .contact {
+    .contact-grid {
+      margin-top: 21px;
+      .contact-right {
+        font-size: 35px;
+      }
+    }
+  }
+
+  .footer {
+    padding: 7px $xmargin-narrow;
   }
 }
